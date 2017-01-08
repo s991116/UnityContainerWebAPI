@@ -7,7 +7,7 @@ namespace WebApiTest.Container
 {
     public class UnityResolver : IDependencyResolver
     {
-        private IUnityContainer _container;
+        private readonly IUnityContainer _container;
 
         public UnityResolver(IUnityContainer container)
         {
