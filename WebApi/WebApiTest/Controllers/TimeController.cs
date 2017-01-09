@@ -1,4 +1,6 @@
-﻿using System.Web.Http;
+﻿using System.Net;
+using System.Net.Http;
+using System.Web.Http;
 using WebApiTest.Services;
 
 namespace WebApiTest.Controllers
@@ -16,6 +18,12 @@ namespace WebApiTest.Controllers
         public string Get()
         {
             return _timeService.Now();
+        }
+
+        [HttpPost]
+        public HttpResponseMessage PostMethod(string input)
+        {
+            return new HttpResponseMessage(HttpStatusCode.OK);
         }
     }
 }

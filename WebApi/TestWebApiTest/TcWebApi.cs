@@ -34,5 +34,20 @@ namespace TestWebApiTest
             var result = response.Content.ReadAsAsync<string>().Result;
             Assert.AreEqual("hello world", result);
         }
+
+        [TestMethod]
+        public void WebApiPostTest()
+        {
+            //Arrange
+
+            //Act
+            HttpRequestMessage request = new HttpRequestMessage();
+            HttpContent content = new HttpMessageContent(request);
+            var response = _server.HttpClient.PostAsync("/api/PostMethod", content).Result;
+
+            //Assert
+            var result = response.Content.ReadAsAsync<string>().Result;
+            Assert.AreEqual("hello world", result);
+        }
     }
 }
